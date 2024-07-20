@@ -20,9 +20,7 @@ class _AuthWidgetState extends State<AuthWidget> {
               padding: EdgeInsets.only(left: 10),
               child: Text("Вход/Регистрация", style: txtStlOnYlwback))),
       body: ListView(
-        children: [_FormWidget(),
-        _FooterWidgetSocial(),
-        _FooterAboutWidget()],
+        children: [_FormWidget(), _FooterWidgetSocial(), _FooterAboutWidget()],
       ),
     );
   }
@@ -109,53 +107,61 @@ class _FooterWidgetSocial extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final borderForContainer = BorderSide(width: 3,
-        color: Color.fromRGBO(62, 62, 62, 0.25));
+    final borderForContainer =
+        BorderSide(width: 3, color: Color.fromRGBO(62, 62, 62, 0.25));
     final paddingForSocCont = EdgeInsets.symmetric(vertical: 30);
     return Container(
       decoration: BoxDecoration(
-        border: Border(
-          top: BorderSide(
-            width: 3,
-            color: Color.fromRGBO(62, 62, 62, 0.25)
-          )
-        )
+          border: Border(
+              top: BorderSide(
+                  width: 3, color: Color.fromRGBO(62, 62, 62, 0.25)))),
+      padding: EdgeInsets.symmetric(
+        horizontal: 20,
       ),
-      padding: EdgeInsets.symmetric(horizontal: 20,),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Container(
-            padding: paddingForSocCont,
-              child: Image.asset("assets/images/20200512141345!Instagram_icon.png", height: 60, width: 60,)),
-          Container(
-              padding: EdgeInsets.symmetric(horizontal: 5, vertical: 30),
-              decoration: BoxDecoration(
-                border: Border(
-                  left: borderForContainer,
-                  right: borderForContainer
-                )
-              ),
-              child: Image.asset("assets/images/Facebook_Logo_2023.png",
-                height: 60,
-                width: 60,)),
-          Container(
               padding: paddingForSocCont,
-              child: Image.asset("assets/images/145813.png", height: 60, width: 60,)),
+              child: Image.asset(
+                "assets/images/20200512141345!Instagram_icon.png",
+                height: 60,
+                width: 60,
+              )),
           Container(
               padding: EdgeInsets.symmetric(horizontal: 5, vertical: 30),
               decoration: BoxDecoration(
                   border: Border(
-                      left: borderForContainer,
-                      right: borderForContainer
-                  )
-              ),
-              child: Image.asset("assets/images/Telegram-icon-on-transparent-background-PNG.png",
+                      left: borderForContainer, right: borderForContainer)),
+              child: Image.asset(
+                "assets/images/Facebook_Logo_2023.png",
                 height: 60,
-                width: 60,)),
+                width: 60,
+              )),
           Container(
               padding: paddingForSocCont,
-              child: Image.asset("assets/images/png-transparent-x-icon-ex-twitter-tech-companies-social-media-thumbnail.png", height: 60, width: 60,)),
+              child: Image.asset(
+                "assets/images/145813.png",
+                height: 60,
+                width: 60,
+              )),
+          Container(
+              padding: EdgeInsets.symmetric(horizontal: 5, vertical: 30),
+              decoration: BoxDecoration(
+                  border: Border(
+                      left: borderForContainer, right: borderForContainer)),
+              child: Image.asset(
+                "assets/images/Telegram-icon-on-transparent-background-PNG.png",
+                height: 60,
+                width: 60,
+              )),
+          Container(
+              padding: paddingForSocCont,
+              child: Image.asset(
+                "assets/images/png-transparent-x-icon-ex-twitter-tech-companies-social-media-thumbnail.png",
+                height: 60,
+                width: 60,
+              )),
         ],
       ),
     );
@@ -163,45 +169,111 @@ class _FooterWidgetSocial extends StatelessWidget {
 }
 
 class _FooterAboutWidget extends StatelessWidget {
-  const _FooterAboutWidget ({super.key});
+  const _FooterAboutWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final listOfFooterNames = [
+      'О компании',
+      'Магазины',
+      'Новости',
+      'О нас',
+      'Вакансии'
+    ];
+    final listOfFooterNamesTwo = [
+      'Ваш город',
+      'Минск',
+      'Изменить\nнастройки\ncookies',
+    ];
+    final listOfFooterNamesThree = [
+      'Документы',
+      'Положение\nо скидках',
+      'Конфиденциальность',
+    ];
     return Container(
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+      padding: EdgeInsets.only(left: 16, top: 57, right: 20, bottom: 55),
+      color: TxtWidgColors.BackGroundFooter,
+      child: Column(
+        children: [
+          SizedBox(),
+          Container(
+            padding: EdgeInsets.only(bottom: 25),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                Text('О компании'),
-                Text('Магазины'),
-                Text('Новости'),
-                Text('О нас'),
-                Text('Вакансии'),
-              ],),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                Text('Покупателям'),
-                Text('Бренды'),
-                Text('Доставка'),
-                Text('Оплата'),
-                Text('Оферта'),
-              ],)
-            ],),
-            Row(children: [
-              Column(children: [
+                Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: listOfFooterNames
+                        .map((text) => text == 'О компании'
+                            ? Text(
+                                text,
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16),
+                              )
+                            : Text(
+                                text,
+                                style: TxtWidgColors.FooterTxtStyle,
+                              ))
+                        .toList()),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Покупателям',
+                        style: TextStyle(color: Colors.white, fontSize: 16)),
+                    Text('Бренды', style: TxtWidgColors.FooterTxtStyle),
+                    Text('Доставка', style: TxtWidgColors.FooterTxtStyle),
+                    Text('Оплата', style: TxtWidgColors.FooterTxtStyle),
+                    Text('Оферта', style: TxtWidgColors.FooterTxtStyle),
+                  ],
+                )
+              ],
+            ),
+          ),
+          Container(
+            child: Row(
+              children: [
+                Container(
+                  padding: EdgeInsets.only(left: 45),
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: listOfFooterNamesTwo
+                          .map((text) => text == 'Ваш город'
+                              ? Text(
+                                  text,
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 16),
+                                )
+                              : Text(
+                                  text,
+                                  style: TxtWidgColors.FooterTxtStyle,
+                                ))
+                          .toList()),
+                ),
+                Container(
 
-              ],),
-              Column(children: [
-
-              ],)
-            ],),
-          ],
-        ),
+                  padding: EdgeInsets.only(left: 60),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: listOfFooterNamesThree
+                        .map((text) => text == 'Документы'
+                            ? Text(
+                                text,
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16),
+                              )
+                            : Text(
+                                text,
+                                style: TxtWidgColors.FooterTxtStyle,
+                                overflow: TextOverflow.ellipsis,
+                              ))
+                        .toList(),
+                  ),
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
