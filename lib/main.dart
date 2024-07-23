@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:petstore_with_api/widgets/auth/auth_widget.dart';
+import 'package:petstore_with_api/widgets/main_screen/main_screen_widget.dart';
 
 void main() {
   runApp(const PetsMarket());
@@ -16,7 +17,11 @@ class PetsMarket extends StatelessWidget {
         appBarTheme: AppBarTheme(backgroundColor: const Color.fromRGBO(255, 223, 58 , 1)),
 
       ),
-      home: AuthWidget(),
+      routes: {
+        '/auth':(context) => AuthWidget(),
+        '/main_screen':(context) => MainScreenWidget()
+      },
+      initialRoute: '/auth',
     );
   }
 }
