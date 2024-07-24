@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 abstract class AppBtnStyle{
   static final mainColorBtn = MaterialStatePropertyAll<Color>(Color.fromRGBO(255, 223, 58 , 1));
+  static final mainColorApplication = Color.fromRGBO(255, 223, 58 , 1);
 }
 
 abstract class TxtWidgColors{
