@@ -56,8 +56,9 @@ class _FormWidgetState extends State<FormWidget> {
           ),
           Container(
               padding: EdgeInsets.symmetric(horizontal: 10),
-              child: TextField(
-                controller: _phoneTextController,
+              child: TextFormField(
+                initialValue: '+375',
+                //controller: _phoneTextController,
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.symmetric(vertical: 12),
                 ),

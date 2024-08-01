@@ -8,4 +8,5 @@ abstract class AppBtnStyle{
 abstract class TxtWidgColors{
   static final BackGroundFooter = Color(0xFF252525);
   static final FooterTxtStyle = TextStyle(color: Color(0xFF9E9E9E),fontSize: 12);
+  static final SearchBackgroundColor = Color(0xFF9E9E9E);
 }
